@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    padding: 10px 20px;
+    margin: 0 auto;
+    max-width: 400px;
+    height: 100vh;
+    background-color: #f75da7;
+}
+
+.container {
+    height: 300px;
+    background-color: inherit;
+    border-radius: 10px;
+}
+
+.draggable-item-wrapper {
+    position: relative;
+}
+
+.draggable {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 300px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    box-shadow: -2px 3px 22px -6px rgba(0, 0, 0, 0.99);
+    -webkit-box-shadow: -2px 3px 22px -6px rgba(0, 0, 0, 0.99);
+    -moz-box-shadow: -2px 3px 22px -6px rgba(0, 0, 0, 0.99);
+}
+.draggable:hover{
+    cursor: pointer;
+}
+
+.draggable.dragging {
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.draggable-1 {
+    top: 20px;
+    z-index: 1;
+}
+
+.draggable-2 {
+    top: 50px;
+    z-index: 2;
+}
+
+.draggable-3 {
+    top: 80px;
+    z-index: 3;
+}
+
+.draggable span {
+    width: 50px;
+    height: 10px;
+    border-radius: 20px;
+    background-color: gainsboro;
+    margin: 0 auto;
+
+}
+.none{
+    animation: out 0.5s ease 0s 1 normal forwards;
+}
+.show{
+    animation: in 1s ease 0s 1 normal forwards;
+}
+@keyframes out {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+}
+
+@keyframes in {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+/* .draggable.absolute{
+    position: absolute;
+}
+.draggable.unset{
+    position: unset;
+} */
